@@ -33,6 +33,37 @@ body {
   color: var(--text);
 }
 
+.page-title {
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin: 1rem 0;
+
+  /* 🌈 Degradado animado */
+  background: linear-gradient(
+    90deg,
+    #0f74da,
+    #4aa8ff,
+    #00d4ff,
+    #0f74da
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* ✨ Glow */
+  text-shadow: 0 0 20px rgba(0, 140, 255, 0.35);
+
+  /* 🎬 Animación */
+  animation: titleGradient 6s ease-in-out infinite;
+}
+
+@keyframes titleGradient {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
 /* Layout helpers */
 
 .container {
@@ -199,7 +230,32 @@ section {
   font-size: clamp(2.4rem, 3vw, 3rem);
   line-height: 1.1;
   margin: 0.4rem 0 0.8rem;
+
+  /* 🎨 Gradiente animado */
+  background: linear-gradient(
+    90deg,
+    #0f74da,
+    #4aa8ff,
+    #0f74da,
+    #0053a6
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  /* ✨ Brillo suave */
+  text-shadow: 0 0 18px rgba(15, 116, 218, 0.35);
+
+  /* 🌈 Animación */
+  animation: heroGradient 5s ease-in-out infinite;
 }
+
+@keyframes heroGradient {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
 
 .hero-tag {
   display: inline-flex;
@@ -368,7 +424,7 @@ section {
 }
 
 .feature-title {
-  color: #e5e7eb;
+  color: #3d15b7;
   font-weight: 500;
 }
 
