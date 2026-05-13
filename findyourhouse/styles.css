@@ -1068,3 +1068,46 @@ section {
     grid-template-columns: 1fr;
   }
 }
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(12px);
+}
+nav {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #0f74da, #4aa8ff);
+  transition: width .3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+nav {
+  animation: fadeDown .6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+nav a.active {
+  color: #4aa8ff;
+  font-weight: 600;
+}
